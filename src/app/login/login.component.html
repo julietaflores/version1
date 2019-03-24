@@ -1,4 +1,3 @@
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
 <div id="ola">
     <h1>LOGIN ADMIN</h1>
   <p> usuario: <input type="text" [(ngModel)]="log.usuario" /> </p>
@@ -7,44 +6,3 @@
     <button  ng-model="isHidden" (click)="validar()"> validar </button>     
   </p>
 </div>
-
-<div>
-    <h1>LISTA DE USUARIOS REGISTRADOS</h1>
-    <table ng-hide="isHidden"  >
-      <tr>
-        <td>ID</td>
-        <td>NOMBRE</td>
-        <td>TELEFONO</td>
-        <td>EMAIL</td>
-        <td>BORRAR</td>
-        <td>SELECCIONAR</td>
-     
-      </tr>
-      <tr *ngFor="let usuario of usuarios">
-        <td> {{usuario.idUsuario }} </td>
-        <td> {{usuario.nombre }} </td>
-        <td> {{usuario.telefono }} </td>
-        <td> {{usuario.email }} </td>
-        <td> <button (click)="bajaUsuario(usuario.idUsuario)"> Borrar </button> </td>
-        <td> <button (click)="seleccionarUsuario(usuario.idUsuario)"> Seleccionar </button> </td>
-      </tr>
-    </table>
-  
-  
-  
-    <ng-template #sin>
-      <p>No hay usuarios registrados.</p>
-    </ng-template>
-  
-    <div>
-      <p> Nombre: <input type="text" [(ngModel)]="usuario.nombre" /> </p>
-      <p> Telefono: <input type="number" [(ngModel)]="usuario.telefono" /> </p>
-      <p> Email: <input type="text" [(ngModel)]="usuario.email" /> </p>
-      <p> 
-        <button (click)="altaUsuario()"> AGREGAR </button> 
-        <button (click)="editarUsuario()"> MODIFICAR </button> 
-      </p>
-    </div>
-  
-   
-  </div>
